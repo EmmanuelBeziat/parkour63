@@ -1,11 +1,22 @@
+@font-face {
+	font-family: 'Gochi Hand';
+	src: url('../fonts/gochi-hand/') format('woff2'),
+			url('../fonts/gochi-hand/GochiHand-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 :root {
 	--color-text: #ddd;
 	--color-background: linear-gradient(to bottom, #181317, #0c0b0b);
 
 	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
 
-	--font-stack-common: "Segoe UI", helvetica, roboto, Arial, sans-serif;
+	--font-stack-common: system-ui, "Segoe UI", helvetica, roboto, Arial, sans-serif;
+	--font-stack-heading: "Gochi Hand", var(--font-stack-common);
 }
+
 body {
 	margin: 0;
 	font: 400 16px/1.25 var(--font-stack-common);
@@ -23,14 +34,15 @@ body {
 	text-align: center;
 	gap: 4rem;
 
-	h1 {
-		margin: 0;
-	}
-
 	img {
 		max-width: 100%;
 		vertical-align: top;
 	}
+}
+
+.title {
+	margin: 0;
+	font: 400 3rem/1.25 var(--font-stack-heading);
 }
 
 .network-links {
