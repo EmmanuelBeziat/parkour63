@@ -17,6 +17,14 @@
 	--font-stack-heading: "Gochi Hand", var(--font-stack-common);
 }
 
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
 	font: 400 16px/1.25 var(--font-stack-common);
