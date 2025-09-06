@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/**'
+      - 'public/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'index.html'
+      - 'postcss.config.js'
+      - '.eslintrc.js'
+      - '.browserlistrc'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      VITE_PORT: ${{ vars.VITE_PORT }}
+      VITE_SOCIAL_INSTAGRAM: ${{ vars.VITE_SOCIAL_INSTAGRAM }}
+      VITE_SOCIAL_FACEBOOK: ${{ vars.VITE_SOCIAL_FACEBOOK }}
+      VITE_SOCIAL_TIKTOK: ${{ vars.VITE_SOCIAL_TIKTOK }}
+      VITE_SOCIAL_DISCORD: ${{ vars.VITE_SOCIAL_DISCORD }}
+      VITE_SOCIAL_WHATSAPP: ${{ vars.VITE_SOCIAL_WHATSAPP }}
+      VITE_SOCIAL_EMAIL: ${{ vars.VITE_SOCIAL_EMAIL }}
+      VITE_SOCIAL_HELLOASSO: ${{ vars.VITE_SOCIAL_HELLOASSO }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build project
+      run: npm run build
+
+    - name: Create archive of dist folder
+      run: tar -czf dist.tar.gz -C dist .
+
+    - name: Deploy to server
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        source: "dist.tar.gz"
+        target: "/tmp/"
+
+    - name: Extract and move files to deployment directory
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        script: |
+          # Create the deployment directory if it doesn't exist
+          mkdir -p ${{ secrets.DEPLOY_PATH }}
+
+          # Navigate to the deployment directory
+          cd ${{ secrets.DEPLOY_PATH }}
+
+          # Remove existing content
+          rm -rf *
+
+          # Extract the archive directly into the deployment directory
+          tar -xzf /tmp/dist.tar.gz -C .
+
+          # Change ownership of extracted files to www-data
+          chown -R www-data:www-data .
+
+          # Make deploy script executable and execute it
+          chmod +x ${{ secrets.DEPLOY_SCRIPT }}
+          bash ${{ secrets.DEPLOY_SCRIPT }}
+
+          # Clean up temporary archive
+          rm -f /tmp/dist.tar.gz

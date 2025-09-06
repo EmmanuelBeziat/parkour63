@@ -1,0 +1,20 @@
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font: 400 16px/1.25 var(--font-stack-common);
+	background: var(--color-background);
+	color: var(--color-text);
+}
+
+.title {
+	margin: 0;
+	font: 400 3rem/1.25 var(--font-stack-heading);
+}
+

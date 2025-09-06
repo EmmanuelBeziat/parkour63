@@ -1,0 +1,9 @@
+:root {
+	--color-text: #ddd;
+	--color-background: linear-gradient(to bottom, #181317, #0c0b0b);
+
+	--ease-back-out: cubic-bezier(.295, 1.750, .690, .900);
+
+	--font-stack-common: system-ui, "Segoe UI", helvetica, roboto, Arial, sans-serif;
+	--font-stack-heading: "Gochi Hand", var(--font-stack-common);
+}
