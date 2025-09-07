@@ -1,0 +1,269 @@
+[
+  {
+    "slug": "allagnat",
+    "names": [
+			"Allagnat"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.774137",
+      "longitude": "3.083942"
+    }
+  },
+  {
+    "slug": "marches-d-assas",
+    "names": [
+			"Marches d'Assas",
+			"Poséïdon"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.776229",
+      "longitude": "3.0842284"
+    }
+  },
+  {
+    "slug": "eglise-de-beaurepaire",
+    "names": [
+			"Église de Beaurepaire"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7737774",
+      "longitude": "3.0760372"
+    }
+  },
+  {
+    "slug": "square-amadeo",
+    "names": [
+			"Square Amadeo"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7780251",
+      "longitude": "3.0731607"
+    }
+  },
+  {
+    "slug": "fac-de-droit",
+    "names": [
+			"Fac de droit",
+			"Pierres noires"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7710428",
+      "longitude": "3.0888367"
+    }
+  },
+  {
+    "slug": "uca-gergovia",
+    "names": [
+			"UCA Gergovia",
+			"Fac de Lettres"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7719186",
+      "longitude": "3.0906378"
+    }
+  },
+  {
+    "slug": "maison-de-la-culture",
+    "names": [
+			"Maison de la culture"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7700457",
+      "longitude": "3.0854542"
+    }
+  },
+  {
+    "slug": "coubertin",
+    "names": [
+			"Coubertin"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7695003",
+      "longitude": "3.0845802"
+    }
+  },
+  {
+    "slug": "les-marches",
+    "names": [
+			"Les marches"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7695935",
+      "longitude": "3.0866279"
+    }
+  },
+  {
+    "slug": "residence-briand",
+    "names": [
+			"Résidence Briand"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7706207",
+      "longitude": "3.0759711"
+    }
+  },
+  {
+    "slug": "cathedrale",
+    "names": [
+			"Cathédrale"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7787943",
+      "longitude": "3.0852322"
+    }
+  },
+  {
+    "slug": "hotel-de-ville",
+    "names": [
+			"Hotel de ville"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7807054",
+      "longitude": "3.0856414"
+    }
+  },
+  {
+    "slug": "les-deux-marches",
+    "names": [
+			"Les deux marchés"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.779784",
+      "longitude": "3.083958"
+    }
+  },
+  {
+    "slug": "passage-delille",
+    "names": [
+			"Passage Delille"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7813089",
+      "longitude": "3.0904993"
+    }
+  },
+  {
+    "slug": "le-sauvage",
+    "names": [
+			"Le Sauvage"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7798409",
+      "longitude": "3.088523"
+    }
+  },
+  {
+    "slug": "les-carmes",
+    "names": [
+			"Les Carmes"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7827099",
+      "longitude": "3.0932103"
+    }
+  },
+  {
+    "slug": "square-verdun",
+    "names": [
+			"Square Verdun"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7762579",
+      "longitude": "3.0675563"
+    }
+  },
+  {
+    "slug": "auchan-cham",
+    "names": [
+			"Auchan Cham"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7749369",
+      "longitude": "3.0618173"
+    }
+  },
+  {
+    "slug": "les-volcans",
+    "names": [
+			"Les volcans"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7713629",
+      "longitude": "3.0835663"
+    }
+  },
+  {
+    "slug": "derriere-les-volcans",
+    "names": [
+			"Derrière les volcans"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7712309",
+      "longitude": "3.0859143"
+    }
+  },
+  {
+    "slug": "deux-murs",
+    "names": [
+			"Deux murs"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7793629",
+      "longitude": "3.0798573"
+    }
+  },
+  {
+    "slug": "oceania",
+    "names": [
+			"Oceania"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7717961",
+      "longitude": "3.0838375"
+    }
+  },
+  {
+    "slug": "entree-de-parking-barbusse",
+    "names": [
+			"Entrée de Parking Barbusse"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7829785",
+      "longitude": "3.0850707"
+    }
+  },
+  {
+    "slug": "17-45",
+    "names": [
+			"17.45"
+		],
+    "tags": [],
+		"position": {
+      "latitude": "45.7722509",
+      "longitude": "3.0855313"
+    }
+  }
+]
