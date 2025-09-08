@@ -29,14 +29,35 @@ const mapSpots = ref<HTMLElement | null>(null)
 const selectedSpot = shallowRef<Spot | null>(null)
 
 // Watch for route changes to open MapInfos when a slug is present
-watch(() => route.params.slug, (newSlug) => {
-	if (newSlug) {
-		const spot = props.spots.find(spot => spot.slug === newSlug)
-		if (spot) {
-			selectedSpot.value = spot
+const openSpotFromRoute = (slug: string | string[] | undefined) => {
+	if (slug && typeof slug === 'string') {
+		if (props.spots.length > 0) {
+			const spot = props.spots.find(spot => spot.slug === slug)
+			if (spot) {
+				selectedSpot.value = spot
+			}
+		}
+		else {
+			setTimeout(() => {
+				const spot = props.spots.find(spot => spot.slug === slug)
+				if (spot) {
+					selectedSpot.value = spot
+				}
+			}, 100)
 		}
 	}
+}
+
+watch(() => route.params.slug, (newSlug) => {
+	openSpotFromRoute(newSlug)
 }, { immediate: true })
+
+// Also watch for spots changes to handle the case where spots are loaded after the route
+watch(() => props.spots, (newSpots) => {
+	if (newSpots.length > 0 && route.params.slug) {
+		openSpotFromRoute(route.params.slug)
+	}
+})
 
 // Create markers for each spot
 const createMarkers = () => {
