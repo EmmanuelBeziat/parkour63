@@ -14,6 +14,11 @@ const router = createRouter({
 			path: '/spots',
 			name: 'spots',
 			component: MapView
+		},
+		{
+			path: '/spot/:slug',
+			name: 'spot',
+			component: MapView
 		}
   ],
 })

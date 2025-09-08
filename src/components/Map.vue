@@ -1,13 +1,21 @@
 <template>
 	<div ref="mapSpots" class="map-container"></div>
+	<div v-if="selectedSpot" class="map-dialog">
+		<MapInfos :spot="selectedSpot" />
+	</div>
 </template>
 
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, shallowRef, createVNode, render, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import maplibregl from 'maplibre-gl'
-import 'maplibre-gl/dist/maplibre-gl.css'
 import type { Spot } from '@/api/spots'
+import MapInfos from '@/components/MapInfos.vue'
+import MapMarker from '@/components/MapMarker.vue'
+
+const router = useRouter()
+const route = useRoute()
 
 const props = defineProps<{
 	center: [number, number]
@@ -16,8 +24,19 @@ const props = defineProps<{
 	spots: Spot[]
 }>()
 
-const mapSpots = ref<HTMLElement | null>(null)
 let map: maplibregl.Map | null = null
+const mapSpots = ref<HTMLElement | null>(null)
+const selectedSpot = shallowRef<Spot | null>(null)
+
+// Watch for route changes to open MapInfos when a slug is present
+watch(() => route.params.slug, (newSlug) => {
+	if (newSlug) {
+		const spot = props.spots.find(spot => spot.slug === newSlug)
+		if (spot) {
+			selectedSpot.value = spot
+		}
+	}
+}, { immediate: true })
 
 // Create markers for each spot
 const createMarkers = () => {
@@ -30,23 +49,29 @@ const createMarkers = () => {
 	props.spots.forEach(spot => {
 		if (!map) return
 
-		const markerElement = document.createElement('div')
-		markerElement.className = 'spot-marker'
-		markerElement.dataset.name = spot.names.join(' / ')
-		markerElement.title = spot.names.join(' / ')
+		// Create a container for the marker component
+		const markerContainer = document.createElement('div')
+
+		// Create a Vue component instance for the marker
+		const markerVNode = createVNode(MapMarker, {
+			spot: spot,
+			onClick: (spot: Spot) => {
+				selectedSpot.value = spot
+				router.push(`/spot/${spot.slug}`)
+			}
+		})
+
+		// Render the component into the container
+		render(markerVNode, markerContainer)
+
+		// Get the actual marker element from the component
+		const markerElement = markerContainer.firstChild as HTMLElement
 
 		new maplibregl.Marker({ element: markerElement })
 			.setLngLat([parseFloat(spot.position.longitude), parseFloat(spot.position.latitude)])
 			.addTo(map)
 	})
 }
-
-// Watch for spots changes and create markers
-watch(() => props.spots, () => {
-	if (map) {
-		createMarkers()
-	}
-})
 
 onMounted(() => {
 	if (mapSpots.value) {
@@ -57,13 +82,16 @@ onMounted(() => {
 			zoom: props.zoom
 		})
 
-		// Create markers when map is loaded
 		map.on('load', () => {
 			createMarkers()
 		})
 	}
 })
 </script>
+
+<style>
+@import "maplibre-gl/dist/maplibre-gl.css";
+</style>
 
 <style scoped>
 :deep(.spot-marker) {
@@ -72,5 +100,14 @@ onMounted(() => {
 	outline: 2px solid #ffffff;
 	width: 45px;
 	aspect-ratio: 1;
+	cursor: pointer;
+}
+
+.map-dialog {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
 }
 </style>
