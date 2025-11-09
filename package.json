@@ -39,10 +39,10 @@
 		]
 	},
 	"dependencies": {
-		"maplibre-gl": "^5.10.0",
+		"maplibre-gl": "^5.12.0",
 		"modern-normalize": "^3.0.1",
-		"pinia": "^3.0.3",
-		"vue": "^3.5.22",
+		"pinia": "^3.0.4",
+		"vue": "^3.5.24",
 		"vue-router": "^4.6.3"
 	},
 	"devDependencies": {
@@ -50,20 +50,20 @@
 		"@types/jsdom": "^27.0.0",
 		"@types/node": "^24.10.0",
 		"@vitejs/plugin-vue": "^6.0.1",
-		"@vitest/eslint-plugin": "^1.4.0",
+		"@vitest/eslint-plugin": "^1.4.2",
 		"@vue/eslint-config-typescript": "^14.6.0",
 		"@vue/test-utils": "^2.4.6",
 		"@vue/tsconfig": "^0.8.1",
 		"autoprefixer": "^10.4.21",
-		"eslint": "^9.39.0",
-		"eslint-plugin-oxlint": "^1.25.0",
+		"eslint": "^9.39.1",
+		"eslint-plugin-oxlint": "^1.26.0",
 		"eslint-plugin-vue": "^10.5.1",
 		"husky": "^9.1.7",
 		"jiti": "^2.6.1",
 		"jsdom": "^27.1.0",
 		"lint-staged": "^16.2.6",
 		"npm-run-all2": "^8.0.4",
-		"oxlint": "^1.25.0",
+		"oxlint": "^1.26.0",
 		"postcss": "^8.5.6",
 		"postcss-html": "^1.8.0",
 		"stylelint": "^16.25.0",
@@ -74,7 +74,7 @@
 		"vite-plugin-stylelint": "^6.0.2",
 		"vite-plugin-vue-devtools": "^8.0.3",
 		"vite-svg-loader": "^5.1.0",
-		"vitest": "^4.0.6",
+		"vitest": "^4.0.8",
 		"vue-tsc": "^3.1.3"
 	}
 }
