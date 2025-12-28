@@ -39,34 +39,34 @@
 		]
 	},
 	"dependencies": {
-		"maplibre-gl": "^5.13.0",
+		"maplibre-gl": "^5.15.0",
 		"modern-normalize": "^3.0.1",
 		"pinia": "^3.0.4",
-		"vue": "^3.5.25",
-		"vue-router": "^4.6.3"
+		"vue": "^3.5.26",
+		"vue-router": "^4.6.4"
 	},
 	"devDependencies": {
 		"@tsconfig/node22": "^22.0.5",
 		"@types/jsdom": "^27.0.0",
-		"@types/node": "^24.10.1",
-		"@vitejs/plugin-vue": "^6.0.2",
-		"@vitest/eslint-plugin": "^1.5.0",
+		"@types/node": "^25.0.3",
+		"@vitejs/plugin-vue": "^6.0.3",
+		"@vitest/eslint-plugin": "^1.6.4",
 		"@vue/eslint-config-typescript": "^14.6.0",
 		"@vue/test-utils": "^2.4.6",
 		"@vue/tsconfig": "^0.8.1",
-		"autoprefixer": "^10.4.22",
-		"eslint": "^9.39.1",
-		"eslint-plugin-oxlint": "^1.30.0",
-		"eslint-plugin-vue": "^10.6.0",
+		"autoprefixer": "^10.4.23",
+		"eslint": "^9.39.2",
+		"eslint-plugin-oxlint": "^1.35.0",
+		"eslint-plugin-vue": "^10.6.2",
 		"husky": "^9.1.7",
 		"jiti": "^2.6.1",
-		"jsdom": "^27.2.0",
+		"jsdom": "^27.4.0",
 		"lint-staged": "^16.2.7",
 		"npm-run-all2": "^8.0.4",
-		"oxlint": "^1.30.0",
+		"oxlint": "^1.35.0",
 		"postcss": "^8.5.6",
 		"postcss-html": "^1.8.0",
-		"stylelint": "^16.26.0",
+		"stylelint": "^16.26.1",
 		"stylelint-config-standard": "^39.0.1",
 		"typescript": "^5.9.3",
 		"vite": "npm:rolldown-vite@latest",
@@ -74,7 +74,7 @@
 		"vite-plugin-stylelint": "^6.0.2",
 		"vite-plugin-vue-devtools": "^8.0.5",
 		"vite-svg-loader": "^5.1.0",
-		"vitest": "^4.0.14",
-		"vue-tsc": "^3.1.5"
+		"vitest": "^4.0.16",
+		"vue-tsc": "^3.2.1"
 	}
 }
